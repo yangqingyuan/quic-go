@@ -912,7 +912,8 @@ func (s *connection) handleSinglePacket(p *receivedPacket, hdr *wire.Header) boo
 	}()
 
 	if hdr.Type == protocol.PacketTypeRetry {
-		return s.handleRetryPacket(hdr, p.data)
+		//return s.handleRetryPacket(hdr, p.data)
+		return true //close retry for test
 	}
 
 	// The server can change the source connection ID with the first Handshake packet.
